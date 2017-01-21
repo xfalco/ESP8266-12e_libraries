@@ -67,7 +67,7 @@ void RestClient::print(String message) {
 	_client.flush();
 }
 
-void RestClient::serveHtml() {
+void RestClient::serveDefaultHtml() {
 	print(_html);
 }
 

@@ -10,7 +10,7 @@ example:
   server.addParameter("blah");
   server.endMethod();
 ```
-will construct a default HTML page with a form supporting a `foo` and a `blah` label.
+will construct a default HTML page with a form supporting a `foo` and a `blah` label that can be served from a RestClient via the `serveDefaultHtml` method.
 
 RestClient (accessible via the `RestServer:getClient` method) in turn wraps a WiFiClient with additional functionality enabling access to the REST interface accessed. For example, to access the parameters sent to the above method:
 ```
@@ -19,7 +19,7 @@ RestClient client = server.getClient();
     return;
   }
   if(client.getMethod().equals("/")) {
-    client.serveHtml();
+    client.serveDefaultHtml();
     return;
   }
   Serial.println(client.getMethodType());

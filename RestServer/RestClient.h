@@ -14,7 +14,7 @@ class RestClient
     String getParameterString(String parameterName);
     int getParameterInt(String parameterName);
     void print(String message);
-    void serveHtml();
+    void serveDefaultHtml();
     operator bool();
   private:
   	int _numParameters;
