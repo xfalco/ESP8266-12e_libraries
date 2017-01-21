@@ -28,9 +28,58 @@ void RestServer::addParameter(String parameterTitle, String parameterName) {
   _html.concat("<input type=\"text\" id=\"" + parameterName + "\" name=\"" + parameterName + "\"><br/>");
 }
 
+void RestServer::addSelectParameter(String parameterName, const char* option1, const char* option2) {
+  addSelectParameter(parameterName, parameterName, option1, option2);
+}
+
+void RestServer::addSelectParameter(String parameterName, const char* option1, const char* option2, const char* option3) {
+  addSelectParameter(parameterName, parameterName, option1, option2, option3);
+}
+
+void RestServer::addSelectParameter(String parameterName, const char* option1, const char* option2, const char* option3, const char* option4) {
+  addSelectParameter(parameterName, parameterName, option1, option2, option3, option4);
+}
+
+void RestServer::addSelectParameter(String parameterName, const char* option1, const char* option2, const char* option3, const char* option4, const char* option5) {
+  addSelectParameter(parameterName, parameterName, option1, option2, option3, option4, option4);
+}
+
+void RestServer::addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2) {
+  addSelectParameter(parameterTitle, parameterName, option1, option2, NULL);
+}
+
+void RestServer::addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2, const char* option3) {
+  addSelectParameter(parameterTitle, parameterName, option1, option2, option3, NULL);
+}
+
+void RestServer::addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2, const char* option3, const char* option4) {
+  addSelectParameter(parameterTitle, parameterName, option1, option2, option3, option4, NULL);
+}
+
+void RestServer::addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2, const char* option3, const char* option4, const char* option5) {
+  _html.concat("<label for=\"" + parameterName + "\">" + parameterTitle + "</label>");
+  _html.concat("<select id=\"" + parameterName + "\" name=\"" + parameterName + "\">");
+    if(option1 != NULL) {
+      _html.concat(String("<option value=\"") + option1 + "\">" + option1 + "</option>");
+    }
+    if(option2!= NULL) {
+      _html.concat(String("<option value=\"") + option2 + "\">" + option2 + "</option>");
+    }
+    if(option3 != NULL) {
+      _html.concat(String("<option value=\"") + option3 + "\">" + option3 + "</option>");
+    }
+    if(option4 != NULL) {
+      _html.concat(String("<option value=\"") + option4 + "\">" + option4 + "</option>");
+    }
+    if(option5 != NULL) {
+      _html.concat(String("<option value=\"") + option5 + "\">" + option5 + "</option>");
+    }
+  _html.concat("</select><br/>");
+}
+
 void RestServer::connect(const char* ssid, const char* password, bool printToSerial) {
 	if(printToSerial) {
-		Serial.println();
+		  Serial.println();
   		Serial.println();
   		Serial.print("Connecting to ");
   		Serial.println(ssid);

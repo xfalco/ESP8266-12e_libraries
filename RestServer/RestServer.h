@@ -14,6 +14,14 @@ class RestServer
     void endMethod();
     void addParameter(String parameterName);
     void addParameter(String parameterTitle, String parameterName);
+    void addSelectParameter(String parameterName, const char* option1, const char* option2);
+    void addSelectParameter(String parameterName, const char* option1, const char* option2, const char* option3);
+    void addSelectParameter(String parameterName, const char* option1, const char* option2, const char* option3, const char* option4);
+    void addSelectParameter(String parameterName, const char* option1, const char* option2, const char* option3, const char* option4, const char* option5);
+    void addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2);
+    void addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2, const char* option3);
+    void addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2, const char* option3, const char* option4);
+    void addSelectParameter(String parameterTitle, String parameterName, const char* option1, const char* option2, const char* option3, const char* option4, const char* option5);
     void connect(const char* ssid, const char* password, bool printToSerial);
     RestClient getClient();
 
